@@ -1,5 +1,5 @@
 package module3.task2;
 
-public class Bouquet  {
-    private Flower[] flower;
+public class Bouquet {
+    private Flower[] flowers;
 }
