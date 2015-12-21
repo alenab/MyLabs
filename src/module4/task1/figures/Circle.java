@@ -11,5 +11,5 @@ public class Circle extends Figure {
     @Override
     double getSquare() {
         return Math.PI * radius * radius;
-    }
+    } //Делай методы публичными. По своей сущности, такие методы должны быть доступны всем.
 }
