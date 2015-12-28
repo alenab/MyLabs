@@ -16,6 +16,12 @@ public class Main {
         }
 
         try {
+            dir.removeFile("picture1.jpg");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        try {
             dir.removeFile("not_existing_file_name.bmp");
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());

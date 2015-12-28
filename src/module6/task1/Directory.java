@@ -3,6 +3,8 @@ package module6.task1;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 
+//мне дл€ проверки работоспособности твоего кода не хватило геттера на массив файлов. »з мейна к нему никак не достучатьс€.
+
 public class Directory {
     private File[] files = new File[10];
     private int currentIndex = 0;
@@ -22,7 +24,7 @@ public class Directory {
                 if (files[i].getFileName().equals(fileName)) {
                     File[] tempArray = Arrays.copyOfRange(this.files, i + 1, files.length);
                     System.arraycopy(tempArray, 0, files, i, tempArray.length);
-                    files[files.length - 1] = null;
+                    files[files.length - 1] = null; //а если € захочу подр€д удалить несколько файлов, а у теб€ обнул€етс€ всегда только последн€€ €чейка.
                     fileNotFound = false;
                     break;
                 }
