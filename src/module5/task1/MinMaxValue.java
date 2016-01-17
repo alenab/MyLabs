@@ -1,7 +1,7 @@
 package module5.task1;
 
 public class MinMaxValue {
-
+    // Anti-pattern: Code duplication
     public static int getMax(int[] intArray) {
         return getNumber(intArray, true);
     }
@@ -15,7 +15,7 @@ public class MinMaxValue {
         }
         return value;
     }
-
+    // Anti-pattern: Code duplication
     public static int getMin(int[] intArray) {
         return getNumber(intArray, false);
     }
