@@ -1,6 +1,6 @@
 package module4.task1.figures;
 
-public class Circle extends Figure {
+public class Circle implements Figure {
 
     private int radius;
 
@@ -9,7 +9,7 @@ public class Circle extends Figure {
     }
 
     @Override
-    double getSquare() {
+    public double getSquare() {
         return Math.PI * radius * radius;
-    } //Делай методы публичными. По своей сущности, такие методы должны быть доступны всем.
+    }
 }

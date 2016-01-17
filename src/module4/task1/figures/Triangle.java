@@ -1,6 +1,6 @@
 package module4.task1.figures;
 
-public class Triangle extends Figure {
+public class Triangle implements Figure {
 
     private int sideA;
     private int sideB;
@@ -13,7 +13,7 @@ public class Triangle extends Figure {
     }
 
     @Override
-    double getSquare() {
+    public double getSquare() {
         int perimeter = sideA + sideB + sideC;
         return Math.sqrt(perimeter * (perimeter - sideA) * (perimeter - sideB) * (perimeter - sideC));
     }

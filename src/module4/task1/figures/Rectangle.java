@@ -1,6 +1,6 @@
 package module4.task1.figures;
 
-public class Rectangle extends Figure {
+public class Rectangle implements Figure {
 
     private int sideA;
     private int sideB;
@@ -11,7 +11,7 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    double getSquare() {
+    public double getSquare() {
         return sideA * sideB;
     }
 }
