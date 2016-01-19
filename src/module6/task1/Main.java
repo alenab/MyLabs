@@ -5,11 +5,12 @@ import java.io.FileNotFoundException;
 public class Main {
 
     public static void main(String[] args) {
-        Directory dir = new Directory();
+        Directory dir = new Directory();// не понятно, какую ты создаешь директорию. Где название папки? где ее вообще создание, как реального файла?
+        //у меня этот код всегда работает на то, чтобы выбрасывался эксепшн. Или в этом и задумка?
 
         try {
             for (int i = 0; i <= 10; i++) {
-                dir.addFile(new ImageFile("picture" + i + ".jpg"));
+                dir.addFile(new ImageFile("pictures" + i + ".jpg"));
             }
         } catch (FullDirectoryException e) {
             System.out.println(e.getMessage());

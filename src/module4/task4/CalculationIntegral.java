@@ -19,7 +19,7 @@ public abstract class CalculationIntegral {
         int[] xValues = getRandomNumbersInBound(n);
 
         int sum = 0;
-        for (int i = 0; i < xValues.length; i++) {
+        for (int i = 0; i < xValues.length; i++) {//Идея же подсказывает, что можно использовать цикл фор-ич
             sum += function(xValues[i]);
         }
 
