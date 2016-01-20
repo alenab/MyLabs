@@ -10,8 +10,8 @@ public class MatrixCalculator {
         }
         int[][] matrixC = new int[matrixA.length][matrixA[0].length];
 
-        for (int i = 0; i < 2; i++) { // меджик намбер - 2
-            for (int k = 0; k < 2; k++) {
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int k = 0; k < matrixA[i].length; k++) {
                 matrixC[i][k] = matrixA[i][k] + matrixB[i][k];
             }
         }
@@ -27,7 +27,7 @@ public class MatrixCalculator {
 
         int[][] matrixD = new int[matrixK.length][matrixL[0].length];
 
-        for (int row = 0; row < matrixD.length; row++) { // в жизни тройной цикл - это жесть)) для перформанса. Даже двойной желательно избегать.
+        for (int row = 0; row < matrixD.length; row++) {
             for (int column = 0; column < matrixD[row].length; column++) {
                 int sum = 0;
                 for (int m = 0; m < matrixL.length; m++) {
@@ -46,48 +46,52 @@ public class MatrixCalculator {
                     {1, 3},
                     {1, 4},
             };
+            System.out.println("matrixA" + "\t" );
+            matrixPrintln(matrixA);
             int matrixB[][] = {
                     {0, 3},
                     {1, 3},
             };
+            System.out.println("matrixB" + "\t" );
+            matrixPrintln(matrixB);
             int[][] matrixC = matrixSum(matrixA, matrixB);
             System.out.println("matrixA+matrixB=matrixC ");
-            for (int row = 0; row < matrixC.length; row++) {// было бы неплохо, чтобы ты наглядно выводила исходные две матрицы
-                //а потом уже результирующую.
-                for (int column = 0; column < matrixC[row].length; column++) {
-                    System.out.print(matrixC[row][column] + "\t");
-                }
-                System.out.println();
-            }
+            matrixPrintln(matrixC);
+
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
 
-        try {// а можно описать, объяснить, как перемножаются две матрицы с разной размерностью строк и колонок?
-            //какой принцип?
+        try {
             int matrixK[][] = {
                     {1, 3},
                     {1, 4},
                     {2, 0},
             };
+            System.out.println("matrixK" + "\t" );
+            matrixPrintln(matrixK);
             int matrixL[][] = {
                     {0, 3, 4, 1},
                     {1, 3, 0, 2},
             };
-
+            System.out.println("matrixL" + "\t" );
+            matrixPrintln(matrixL);
             int[][] matrixD = matrixMultiplication(matrixK, matrixL);
             System.out.println("matrixK*matrixL=matrixD ");
-
-            for (int printRow = 0; printRow < matrixD.length; printRow++) {
-                for (int printColumn = 0; printColumn < matrixD[printRow].length; printColumn++) {
-                    System.out.printf("%d\t", matrixD[printRow][printColumn]);
-                }
-                System.out.println();
-            }
+            matrixPrintln(matrixD);
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    public static void matrixPrintln(int[][] matrix) {
+        for (int row = 0; row < matrix.length; row++) {
+            for (int column = 0; column < matrix[row].length; column++) {
+                System.out.printf("%d\t", matrix[row][column]);
+            }
+            System.out.println();
+        }
     }
 }
+
 
