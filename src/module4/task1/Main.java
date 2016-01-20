@@ -13,7 +13,7 @@ public class Main {
                 new Triangle(2, 3, 4),
                 new Circle(4)
         };
-
+        // Anti-pattern: Code duplication
         for (int i = 0; i < figures.length; i++) {
             System.out.println(figures[i].getClass().getSimpleName() + " Square " + figures[i].getSquare());
         }

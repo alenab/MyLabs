@@ -1,0 +1,4 @@
+package module8.task2;
+
+public class Tulip extends Flower {
+}
