@@ -11,26 +11,24 @@ public class Homework {
         dir.addFile(new AudioFile("song.mp3"));
         dir.addFile(new TextFile("article.txt"));
 
-        String encodedStr = encoder(dir.toString());
+        String encodedStr = encode(dir.toString());
         System.out.println(encodedStr);
-        String originalStr = decoder(encodedStr);
+        String originalStr = decode(encodedStr);
         System.out.println(originalStr);
     }
 
-    public static String decoder(String str) {
+    public static String decode(String str) {
         return transform(str, false);
-    }//методы лучше называть, начиная глаголом
+    }
 
-    public static String encoder(String str) {
+    public static String encode(String str) {
         return transform(str, true);
     }
 
-    private static String transform(String str, boolean doEncode) { //о!!!! класс!!!! то, что я хотела увидеть у всех -
-        // вынесение в метод общее для encode и decode
+    private static String transform(String str, boolean doEncode) {
         char[] charArray = str.toCharArray();
-        int value = charArray.length; //не совсем понятно название для переменной? какую функцию она выполняет? - сдвиг?
-        //если да, тогда ей лучше название shift. И почему она получает значение длины строки(массива чаров)? Просто так
-        //или есть какой-то смысл глубокий?)
+        int value = charArray.length;
+        // просто увеличивает сдвиг, типа нетривиальное шифрование )
         for (int i = 0; i < charArray.length; i++) {
             value += i;
             charArray[i] = doEncode ? (char) (charArray[i] + value) : (char) (charArray[i] - value);

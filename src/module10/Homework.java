@@ -6,8 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static module9.Homework.decoder;
-import static module9.Homework.encoder;
+import static module9.Homework.decode;
+import static module9.Homework.encode;
 
 public class Homework {
 
@@ -25,7 +25,7 @@ public class Homework {
     }
 
     public static void saveSecureFile(String fileName, String text) throws IOException {
-        String encoded = encoder(text);
+        String encoded = encode(text);
         try (FileOutputStream writer = new FileOutputStream(fileName)) {
             writer.write(encoded.getBytes());
         }
@@ -35,7 +35,7 @@ public class Homework {
         StringBuilder builder = new StringBuilder();
         try (Scanner reader = new Scanner(new File(fileName))) {
             while (reader.hasNextLine()) {
-                builder.append(decoder(reader.nextLine()));
+                builder.append(decode(reader.nextLine()));
             }
         }
         return builder.toString();
