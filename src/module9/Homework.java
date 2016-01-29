@@ -17,11 +17,11 @@ public class Homework {
         System.out.println(originalStr);
     }
 
-    private static String decoder(String str) {
+    public static String decoder(String str) {
         return transform(str, false);
     }
 
-    private static String encoder(String str) {
+    public static String encoder(String str) {
         return transform(str, true);
     }
 
