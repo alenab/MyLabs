@@ -2,7 +2,7 @@ package module5.task2;
 
 public class SortSelection {
 
-    public static void getSort(int[] intArray) {
+    public static int[] getSort(int[] intArray) {
 
         for (int i = 0; i < intArray.length; i++) {
             int min = i;
@@ -16,6 +16,7 @@ public class SortSelection {
             intArray[i] = tempVariable;
 
         }
+        return intArray;
     }
 }
 

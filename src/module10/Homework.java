@@ -6,8 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static module9.Homework.decode;
-import static module9.Homework.encode;
+import static module9.CaesarAlgorithm.decode;
+import static module9.CaesarAlgorithm.encode;
 
 public class Homework {
 

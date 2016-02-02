@@ -4,7 +4,7 @@ import module8.task1.AudioFile;
 import module8.task1.Directory;
 import module8.task1.TextFile;
 
-public class Homework {
+public class CaesarAlgorithm {
     public static void main(String[] args) {
 
         Directory dir = new Directory("Desktop");
