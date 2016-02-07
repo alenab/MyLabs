@@ -5,7 +5,8 @@ import module8.task1.Directory;
 import module8.task1.TextFile;
 
 public class CaesarAlgorithm {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //можно было бы мейн все-таки вынести в отдельный класс. Тогда этот класс
+        //можно использовать в других приложениях как утилитный. А если в нем остается мейн - то он уязвим.
 
         Directory dir = new Directory("Desktop");
         dir.addFile(new AudioFile("song.mp3"));

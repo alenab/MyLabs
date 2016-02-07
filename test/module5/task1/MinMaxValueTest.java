@@ -19,7 +19,8 @@ public class MinMaxValueTest {
     }
 
     @Test(timeout = 1000, expected = NullPointerException.class)
-    public void testNullArray() {
+    public void testNullArray() { // это хорошо, что ты такой тест написала, но в коде надо обрабатывать ситуации, которые
+        //могут привести к такому эксепшену. Например при приеме в параметрах массива, первым делом, проверить его длину на ноль.
         final int result = MinMaxValue.getMin(null);
         Assert.assertEquals(-1, result);
     }

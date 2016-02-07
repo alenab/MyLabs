@@ -14,7 +14,7 @@ public class Homework {
     public static void main(String[] args) {
         final String fileName = "secret.txt";
         try {
-            saveSecureFile(fileName, "you should not see this text");
+            saveSecureFile(fileName, "you should not see this text"); //почему именно такой текст? ведь именно его мы в конце и читаем))
             String text = loadSecureFile(fileName);
             System.out.println(text);
         } catch (FileNotFoundException e) {
@@ -35,7 +35,8 @@ public class Homework {
         StringBuilder builder = new StringBuilder();
         try (Scanner reader = new Scanner(new File(fileName))) {
             while (reader.hasNextLine()) {
-                builder.append(decode(reader.nextLine()));
+                builder.append(decode(reader.nextLine())); //ну, это немного паровозик, сложно будет дебажить.
+                //закон Деметры говорит, что лучше разбить на отдельные строки последовательный вызов нескольких методов.
             }
         }
         return builder.toString();

@@ -22,15 +22,15 @@ public class HomeworkTest {
 
     @Test(timeout = DEFAULT_TIMEOUT_MILLIS)
     public void safeSecureFileTest() throws IOException {
-        Homework.saveSecureFile(FILE.getName(), TEXT);
+        Homework.saveSecureFile(FILE.getName(), TEXT);//зачем-то повторяешь то, что ты вынесла в @BeforeClass
 
         Assert.assertTrue(FILE.exists());
-        Assert.assertNotEquals(TEXT, Files.lines(FILE.toPath()).collect(joining()));
+        Assert.assertNotEquals(TEXT, Files.lines(FILE.toPath()).collect(joining())); //паровозище)) разбивай на несколько строк
     }
 
     @Test(timeout = DEFAULT_TIMEOUT_MILLIS)
     public void loadSecureFile() throws IOException {
-        Homework.saveSecureFile(FILE.getName(), TEXT);
+        Homework.saveSecureFile(FILE.getName(), TEXT);//зачем-то повторяешь то, что ты вынесла в @BeforeClass
         final String textFromFile = Homework.loadSecureFile(FILE.getName());
         Assert.assertThat("Content differs from original", textFromFile, equalTo(TEXT));
     }
@@ -39,5 +39,6 @@ public class HomeworkTest {
     public static void deleteFile() {
         FILE.delete();
     }
+    //результат метода делит лучше не игнорить, а вывести в консоль, чтобы убедиться, что метод отработал положительно.
 }
 

@@ -26,7 +26,7 @@ public class CaesarAlgorithmTest {
     @Test(timeout = 3000)
     public void decodeTest() {
         String encodedStr = CaesarAlgorithm.encode(dir.toString());
-        Assert.assertNotEquals(dir.toString(), encodedStr);
+        Assert.assertNotEquals(dir.toString(), encodedStr);// ты в двух методах проверяешь одно и то же, этот ассерт можно опустить.
         String originalStr = CaesarAlgorithm.decode(encodedStr);
 
         Assert.assertEquals(dir.toString(), originalStr);
